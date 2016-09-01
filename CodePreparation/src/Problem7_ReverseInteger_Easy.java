@@ -1,7 +1,7 @@
 /**
  * Created by achaurasia on 9/1/16.
  */
-public class ReverseInteger {
+public class Problem7_ReverseInteger_Easy {
     public int reverse(int x) {
         StringBuilder sb = new StringBuilder(Math.abs(x) + "");
         if(sb.length() < 2) {
@@ -39,7 +39,7 @@ public class ReverseInteger {
     }
 
     public static void main(String args[]){
-        ReverseInteger rev = new ReverseInteger();
+        Problem7_ReverseInteger_Easy rev = new Problem7_ReverseInteger_Easy();
         System.out.print(rev.reverseOptimize(-123));
     }
 }
