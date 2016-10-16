@@ -51,16 +51,16 @@ public class BiggerIsGreater {
             if (temp < max) {
                 for(int j = len - 1; j > i; j--){
                     int nextHigher = inChar[j];
-                    if(temp <= nextHigher){
+                    if(temp < nextHigher){
                         inChar[i] = (char) nextHigher;
                         inChar[j] = (char) temp;
                         break;
                     }
                 }
-                for(int j = 1; j < (len - i)/2; j++){
-                    char tempC = inChar[j + i];
-                    inChar[j + i] = inChar[len - j];
-                    inChar[len - j] = tempC;
+                for(int j = 0; j < (len - i - 1)/2; j++){
+                    char tempC = inChar[j + i + 1];
+                    inChar[j + i + 1] = inChar[len - j - 1];
+                    inChar[len - j - 1] = tempC;
                 }
                 return new String(inChar);
             } else{
