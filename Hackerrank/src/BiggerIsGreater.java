@@ -42,6 +42,7 @@ public class BiggerIsGreater {
     }
 
     String nextGreaterOptimized(String input){
+
         String result = "no answer";
         char inChar[] = input.toCharArray();
         int len = inChar.length;
