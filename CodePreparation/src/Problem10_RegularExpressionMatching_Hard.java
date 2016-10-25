@@ -24,7 +24,6 @@ public class Problem10_RegularExpressionMatching_Hard {
                 return false;
             }
         }
-
         return true;
     }
 }
