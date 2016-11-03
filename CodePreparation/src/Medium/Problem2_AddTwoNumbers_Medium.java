@@ -1,8 +1,6 @@
-/**
+package Medium; /**
  * Created by achaurasia on 8/30/16.
  */
-
-import java.util.List;
 
 /**
  * Definition for singly-linked list.
