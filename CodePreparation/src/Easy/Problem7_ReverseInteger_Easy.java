@@ -1,3 +1,5 @@
+package Easy;
+
 /**
  * Created by achaurasia on 9/1/16.
  */
