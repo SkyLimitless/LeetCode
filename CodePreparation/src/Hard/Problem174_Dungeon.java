@@ -4,7 +4,7 @@ package Hard;
  * Created by achaurasia on 11/4/16.
  */
 public class Problem174_Dungeon {
-    public int calculateMinimumHP(int[][] dungeon) {
+    public int calculateMinimumHP1(int[][] dungeon) {
         int m  = dungeon.length;
         int n = dungeon[0].length;
         int str[][] = new int[m][n];
@@ -41,12 +41,34 @@ public class Problem174_Dungeon {
         return str[m - 1][n - 1]*(-1) + 1;
     }
 
+    public int calculateMinimumHP(int[][] dungeon) {
+        int m  = dungeon.length;
+        int n = dungeon[0].length;
+        dungeon[m - 1][n - 1] = Math.min(0, dungeon[m - 1][n - 1]);
+        for (int i = m - 2; i >= 0 ; i--) {
+            dungeon[i][n - 1] = Math.min(0, dungeon[i][n - 1] + dungeon[i + 1][n - 1]);
+        }
+
+        for (int i = n - 2; i >= 0 ; i--) {
+            dungeon[m - 1][i] = Math.min(0, dungeon[m - 1][i] + dungeon[m - 1][i + 1]);
+        }
+
+        for (int i = m - 2; i >= 0; i--) {
+            for (int j = n - 2; j >= 0 ; j--) {
+                dungeon[i][j] =  Math.min(0, Math.max(dungeon[i + 1][j], dungeon[i][j + 1]) + dungeon[i][j]);
+            }
+        }
+
+        return -1*dungeon[0][0] + 1;
+    }
+
     public static void main(String[] args) {
         Problem174_Dungeon dungeon = new Problem174_Dungeon();
         int mat[][] = {{1, -3, 3}, {0, -2, 0}, {-3, -3, -3}};
+        int mat3[][] = {{-2, -3, 3}, {-5, -10, 1}, {10, 30, -5}};
         int mat1[][] = {{1, 0}};
         int mat2[][] = {{0}};
-        int res = dungeon.calculateMinimumHP(mat);
+        int res = dungeon.calculateMinimumHP(mat3);
         System.out.println("res = " + res);
     }
 }
