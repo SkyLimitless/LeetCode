@@ -22,7 +22,7 @@ public class Problem174_Dungeon {
             for (int j = 1; j < n; j++) {
                 int temp1 = dungeon[i][j] + dungeon[i - 1][j];
                 int temp2 = dungeon[i][j] + dungeon[i][j - 1];
-                if(temp1 > temp2 || str[i - 1][j] > str[i][j - 1]) {
+                if(temp1 + str[i - 1][j] > str[i][j - 1] + temp2 ) {
                     dungeon[i][j] = temp1;
                     str[i][j] = Math.min(dungeon[i][j], str[i -1][j]);
                 } else {
