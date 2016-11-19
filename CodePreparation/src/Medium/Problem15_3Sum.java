@@ -4,6 +4,7 @@ import java.util.*;
 
 /**
  * Created by Aakash on 11/5/2016.
+ * Need to chanbge
  */
 public class Problem15_3Sum {
     public List<List<Integer>> threeSum(int[] nums) {
@@ -23,7 +24,7 @@ public class Problem15_3Sum {
                     l.add(nums[j]);
                     l.add(nums[k]);
                     result.add(l);
-                    while(j < k && nums[j] == nums[k]) j++;
+                    while(j < k && nums[j] == nums[j + 1]) j++;
                     j++;
                 } else if(temp > 0) {
                     k--;
