@@ -13,10 +13,10 @@ public class Problem159_LengthOfLongestSubStringWithTwoDistinct {
         int low = 0, high = 0, max = 0;
         
         while (high < s.length()) {
-            if(map.size() <= 2) {
+            if(map.size() <= 3) {
                 map.put(s.charAt(high), high++);
             }
-            if(map.size() > 2) {
+            if(map.size() > 3) {
                 int lmost = s.length();
                 for(int i : map.values()) {
                     lmost = Math.min(lmost, i);
@@ -31,7 +31,7 @@ public class Problem159_LengthOfLongestSubStringWithTwoDistinct {
 
     public static void main(String[] args) {
         Problem159_LengthOfLongestSubStringWithTwoDistinct lengthOfLongestSubStringWithTwoDistinct = new Problem159_LengthOfLongestSubStringWithTwoDistinct();
-        int len = lengthOfLongestSubStringWithTwoDistinct.twoDistincts("aakash");
+        int len = lengthOfLongestSubStringWithTwoDistinct.twoDistincts("abakabkaabkbbsh");
         System.out.println("len = " + len);
     }
 }
